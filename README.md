@@ -21,25 +21,10 @@ Fedora 28+:
 # dnf install Arc-OSX-Remix-0-1.noarch.rpm
 ```
 
-# Recovering
-
-If GDM load failed, then press ALT+F6 and:
-
-```shell
-# set-gdm-wallpaper --uninstall
-OR
-# cp /usr/share/gnome-shell/gnome-shell-theme.gresource.backup /usr/share/gnome-shell/gnome-shell-theme.gresource
-
-OR delete RPM:
-# dnf remove set-gdm-wallpaper
-OR 
-# rpm-ostree uninstall set-gdm-wallpaper
-```
-
 # Credit and Licences
-Apple Arc OSX Theme: https://github.com/USBA/Apple-Arc-OSX-theme
-macOS Icons: https://git.opendesktop.org/umayanga/Cupertino-macOS-iCons
-macOS Cursor: https://www.gnome-look.org/p/1084939/
-Gnome Shell: https://github.com/B00merang-Project/macOS
-GDM Wallpaper Script: https://github.com/DimaZirix/fedora-gdm-wallpaper
+*Apple Arc OSX Theme: https://github.com/USBA/Apple-Arc-OSX-theme
+*macOS Icons: https://git.opendesktop.org/umayanga/Cupertino-macOS-iCons
+*macOS Cursor: https://www.gnome-look.org/p/1084939/
+*Gnome Shell: https://github.com/B00merang-Project/macOS
+*GDM Wallpaper Script: https://github.com/DimaZirix/fedora-gdm-wallpaper
 
