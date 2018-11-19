@@ -17,6 +17,7 @@ Should work with other distros using gnome.
 Fedora 28+:
 ```shell
 # dnf install Arc-OSX-Remix-0-1.noarch.rpm
+```
 
 Install the following gnome extensions:
 * user-themes
@@ -33,7 +34,6 @@ Set theme to following:
 * Wallpapers: /usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.jpg
 
 Restart and enjoy! 
-```
 
 # Credit and Licences
 * Apple Arc OSX Theme: https://github.com/USBA/Apple-Arc-OSX-theme
