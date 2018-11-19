@@ -1,0 +1,87 @@
+#!/usr/bin/sh
+
+set -e
+
+if ! hash gresource 2>/dev/null; then
+  echo "gresource binary not found. "
+  echo " "
+  echo "Please install glib2 or glib2-devel"
+  echo " "
+  echo "Fedora:"
+  echo "# dnf install glib2-devel"
+  exit 1
+fi
+
+if [ ! -n "$1" ]
+then
+  echo 'Usage:';
+  echo '  set-gdm-wallpaper /path/to/image';
+  echo '  set-gdm-wallpaper --uninstall';
+  exit 1
+fi
+
+if [ "$1" == "--uninstall" ]
+then
+  if grep -q "macOS_mojave_wallpaper_mid-day.jpg" /usr/share/gnome-shell/gnome-shell-theme.gresource; then
+    cp -f /usr/share/gnome-shell/gnome-shell-theme.gresource.backup /usr/share/gnome-shell/gnome-shell-theme.gresource
+
+    echo 'gnome-shell-theme.gresource recovered';
+  fi
+
+  exit
+fi
+
+workdir="/usr/share/gnome-shell/wallpaper"
+
+if [ "$1" == "--rpm" ]
+then
+  image="$workdir/macOS_mojave_wallpaper_mid-day.jpg"
+else
+  image="$1"
+fi
+
+if [ ! -f $image ]
+then
+  echo "File not found: \"$image\" "
+  exit 1
+fi
+
+echo "Updating wallpaper..."
+
+mkdir -p $workdir/theme
+
+echo '<?xml version="1.0" encoding="UTF-8"?>' > $workdir/gnome-shell-theme.gresource.xml
+echo '<gresources><gresource prefix="/org/gnome/shell/theme">' >> $workdir/gnome-shell-theme.gresource.xml
+
+for r in `gresource list /usr/share/gnome-shell/gnome-shell-theme.gresource`; do
+  gfile="${r#\/org\/gnome\/shell\/theme/}";
+  mkdir -p "$(dirname $workdir/theme/$gfile)"
+
+  if [ "$gfile" != "wallpaper-gdm.png" ]; then
+    gresource extract /usr/share/gnome-shell/gnome-shell-theme.gresource $r >$workdir/theme/$gfile
+    echo "<file>$gfile</file>" >> $workdir/gnome-shell-theme.gresource.xml
+  fi
+done
+
+echo "<file>wallpaper-gdm.png</file>" >> $workdir/gnome-shell-theme.gresource.xml
+cp -f $image $workdir/theme/wallpaper-gdm.png
+
+echo '</gresource></gresources>' >> $workdir/gnome-shell-theme.gresource.xml
+
+sed -i -e 's/background: #2e3436 url(resource:\/\/\/org\/gnome\/shell\/theme\/noise-texture.png);/background: #2e3436 url(resource:\/\/\/org\/gnome\/shell\/theme\/wallpaper-gdm.png);background-size: cover;/g' $workdir/theme/gnome-shell.css
+
+cd $workdir/theme
+glib-compile-resources $workdir/gnome-shell-theme.gresource.xml
+
+if ! grep -q "wallpaper-gdm.png" /usr/share/gnome-shell/gnome-shell-theme.gresource; then
+  cp -f /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.backup
+  echo "Backup"
+fi
+
+cp -f $workdir/gnome-shell-theme.gresource /usr/share/gnome-shell/
+
+rm -rf $workdir/theme
+rm -f $workdir/gnome-shell-theme.gresource.xml
+rm -f $workdir/gnome-shell-theme.gresource
+
+echo "Done!"

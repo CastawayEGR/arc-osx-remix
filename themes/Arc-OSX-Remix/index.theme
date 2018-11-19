@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Arc-OSX-Remix
+Comment=A flat theme with transparent elements
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Arc-OSX-Remix
+MetacityTheme=Arc-OSX-Remix
+IconTheme=MacOS
+CursorTheme=OSX-ElCap
+ButtonLayout=menu:close,minimize,maximize
