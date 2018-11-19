@@ -22,9 +22,9 @@ Fedora 28+:
 ```
 
 # Credit and Licences
-*Apple Arc OSX Theme: https://github.com/USBA/Apple-Arc-OSX-theme
-*macOS Icons: https://git.opendesktop.org/umayanga/Cupertino-macOS-iCons
-*macOS Cursor: https://www.gnome-look.org/p/1084939/
-*Gnome Shell: https://github.com/B00merang-Project/macOS
-*GDM Wallpaper Script: https://github.com/DimaZirix/fedora-gdm-wallpaper
+* Apple Arc OSX Theme: https://github.com/USBA/Apple-Arc-OSX-theme
+* macOS Icons: https://git.opendesktop.org/umayanga/Cupertino-macOS-iCons
+* macOS Cursor: https://www.gnome-look.org/p/1084939/
+* Gnome Shell: https://github.com/B00merang-Project/macOS
+* GDM Wallpaper Script: https://github.com/DimaZirix/fedora-gdm-wallpaper
 
