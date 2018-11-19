@@ -17,6 +17,22 @@ Should work with other distros using gnome.
 Fedora 28+:
 ```shell
 # dnf install Arc-OSX-Remix-0-1.noarch.rpm
+
+Install the following gnome extensions:
+* user-themes
+* dash-to-dock
+
+Change gnome settings:
+Enable max and min buttons and make them left justified
+Set Font to San Francisco
+Set theme to following:
+* Applications: Arc-OSX-Remix
+* Cursor: OSX-ELCap
+* Icons: MacOS
+* Shell: Arch-OSX-Remix
+* Wallpapers: /usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.jpg
+
+Restart and enjoy! 
 ```
 
 # Credit and Licences
