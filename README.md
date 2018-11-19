@@ -1,18 +1,16 @@
 # Gnome OSX Theme
 OSX like theme remix for gnome GTK3+ based on Apple-Arc-OSX.
 
+![picture alt](https://image.ibb.co/mXWeh0/Screenshot-from-2018-11-18-23-29-59.png)
+
 # Tested on:
 Fedora 29
 
 Should work with other distros using gnome.
 
-# Usage
+# Set Custom Login Wallpaper
 ```shell
 # set-gdm-wallpaper /path/to/image.png
-
-Requires gresource binary (glib2 or glib2-devel library):
-Fedora: 
-# dnf install glib2-devel
 ```
 
 # Install
