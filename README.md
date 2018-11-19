@@ -24,8 +24,9 @@ Install the following gnome extensions:
 * dash-to-dock
 
 Change gnome settings:
-Enable max and min buttons and make them left justified
-Set Font to San Francisco
+* Enable max and min buttons and make them left justified
+* Set Font to San Francisco
+
 Set theme to following:
 * Applications: Arc-OSX-Remix
 * Cursor: OSX-ELCap
