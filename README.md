@@ -3,38 +3,43 @@ OSX like theme remix for gnome GTK3+ based on Apple-Arc-OSX.
 
 ![picture alt](https://image.ibb.co/mXWeh0/Screenshot-from-2018-11-18-23-29-59.png)
 
-# Tested on:
-Fedora 29
+### Tested on:
+* CentOS 7
+* Fedora 28 & 29
 
-Should work with other distros using gnome.
-
-# Set Custom Login Wallpaper
-```shell
-# set-gdm-wallpaper /path/to/image.png
-```
+Should work with other distros using gnome. May require additional tweaks (CentOS).
 
 # Install
 Fedora 28+:
 ```shell
-# dnf install Arc-OSX-Remix-0-1.noarch.rpm
+# sudo dnf install Arc-OSX-Remix-0-1.noarch.rpm
 ```
+CentOS 7+:
+```shell
+# sudo yum install Arc-OSX-Remix-0-1.noarch.rpm
+```
+### Requirements:
+#### Gnome Extensions
+* [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
+* [dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
-Install the following gnome extensions:
-* user-themes
-* dash-to-dock
+#### Gnome Tweak Tool Settings:
 
-Change gnome settings:
-* Enable max and min buttons and make them left justified
-* Set Font to San Francisco
-
-Set theme to following:
-* Applications: Arc-OSX-Remix
-* Cursor: OSX-ELCap
-* Icons: MacOS
-* Shell: Arch-OSX-Remix
-* Wallpapers: /usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.jpg
+###### Appearance
+![picture_alt](https://image.ibb.co/n2HK0L/appearance.png)
+###### Extensions
+![picture_alt](https://image.ibb.co/bUo3S0/extensions.png)
+###### Fonts
+![picture_alt](https://image.ibb.co/mja6fL/fonts.png)
+###### Window Titlebars
+![picture_alt](https://image.ibb.co/jJwCLL/window-titlebars.png)
 
 Restart and enjoy! 
+
+# Set Custom Login Wallpaper
+```shell
+# sudo set-gdm-wallpaper /path/to/image.png
+```
 
 # Credit and Licences
 * Apple Arc OSX Theme: https://github.com/USBA/Apple-Arc-OSX-theme
@@ -43,3 +48,7 @@ Restart and enjoy!
 * Gnome Shell: https://github.com/B00merang-Project/macOS
 * GDM Wallpaper Script: https://github.com/DimaZirix/fedora-gdm-wallpaper
 
+Author Information
+------------------
+
+This theme compilation was created by [Michael Tipton](https://ibeta.org).
