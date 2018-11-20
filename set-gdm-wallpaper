@@ -22,7 +22,7 @@ fi
 
 if [ "$1" == "--uninstall" ]
 then
-  if grep -q "macOS_mojave_wallpaper_mid-day.jpg" /usr/share/gnome-shell/gnome-shell-theme.gresource; then
+  if grep -q "macOS_mojave_wallpaper_mid-day.png" /usr/share/gnome-shell/gnome-shell-theme.gresource; then
     cp -f /usr/share/gnome-shell/gnome-shell-theme.gresource.backup /usr/share/gnome-shell/gnome-shell-theme.gresource
 
     echo 'gnome-shell-theme.gresource recovered';
@@ -35,7 +35,7 @@ workdir="/usr/share/gnome-shell/wallpaper"
 
 if [ "$1" == "--rpm" ]
 then
-  image="$workdir/macOS_mojave_wallpaper_mid-day.jpg"
+  image="$workdir/macOS_mojave_wallpaper_mid-day.png"
 else
   image="$1"
 fi
