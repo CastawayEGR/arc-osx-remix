@@ -1,6 +1,6 @@
 Name:    Arc-OSX-Remix
 Version: 0
-Release: 1
+Release: 2
 Summary: OSX like Theme for Gnome GTK3
 
 Source0: usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.jpg
@@ -70,5 +70,7 @@ set-gdm-wallpaper --rpm
 set-gdm-wallpaper --uninstall
 
 %changelog
+* Mon Nov 19 2018 Michael Tipton <mike@ibeta.org> 0-2
+- Updated Package Version
 * Sun Nov 18 2018 Michael Tipton <mike@ibeta.org> 0-1
 - Initial Packaging
