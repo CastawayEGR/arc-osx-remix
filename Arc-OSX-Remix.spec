@@ -1,9 +1,9 @@
 Name:    Arc-OSX-Remix
 Version: 0
-Release: 3
+Release: 1 
 Summary: OSX like Theme for Gnome GTK3
 
-Source0: usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.png
+Source0: macOS_mojave_wallpaper_mid-day.png
 Source1: set-gdm-wallpaper
 Source3: fonts
 Source4: icons
@@ -41,7 +41,6 @@ mkdir -p %{buildroot}/usr/share/gnome-shell/wallpaper/
 install -p -m 644 %{SOURCE0} %{buildroot}/usr/share/gnome-shell/wallpaper/
 
 mkdir -p %{buildroot}/usr/share/backgrounds/macOS/
-install -p -m 644 %{SOURCE0} %{buildroot}/usr/share/backgrounds/macOS/
 
 mkdir -p %{buildroot}/usr/share/fonts/SanFrancisco/
 cp -aR %{SOURCE3} %{buildroot}/usr/share/
@@ -57,24 +56,20 @@ install -p -m 755 %{SOURCE1} %{buildroot}/%{_bindir}
 
 %post
 set-gdm-wallpaper --rpm
+cp /usr/share/gnome-shell/wallpaper/macOS_mojave_wallpaper_mid-day.png /usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.png
 
 %files
 %{_bindir}/set-gdm-wallpaper
 /usr/share/gnome-shell/wallpaper/macOS_mojave_wallpaper_mid-day.png
-/usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.png
+/usr/share/backgrounds/macOS/
 /usr/share/fonts/SanFrancisco/
 /usr/share/icons/OSX-ElCap/
 /usr/share/icons/macOS/
 /usr/share/themes/Arc-OSX-Remix/
 
-
 %preun 
 set-gdm-wallpaper --uninstall
 
 %changelog
-* Tue Nov 20 2018 Michael Tipton <mike@ibeta.org> 0-3
-- Changed jpg to png
-* Mon Nov 19 2018 Michael Tipton <mike@ibeta.org> 0-2
-- Updated Package Version
-* Sun Nov 18 2018 Michael Tipton <mike@ibeta.org> 0-1
+* Tue Nov 20 2018 Michael Tipton <mike@ibeta.org> 0-1
 - Initial Packaging
