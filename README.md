@@ -18,6 +18,8 @@ CentOS 7+:
 ```shell
 # sudo yum install Arc-OSX-Remix-0-1.noarch.rpm
 ```
+During RPM install gnome-shell will reload and you will have to login again. Make sure you save all important data before installing.
+
 ### Requirements:
 #### Gnome Extensions
 * [dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
