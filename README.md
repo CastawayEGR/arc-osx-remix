@@ -1,7 +1,7 @@
 # Gnome OSX Theme
 OSX like theme remix for gnome GTK3+ based on Apple-Arc-OSX.
 
-![picture alt](https://image.ibb.co/kw6LaV/screenshot.png)
+![picture alt](https://image.ibb.co/iUAfaV/screenshot.png)
 
 ### Tested on:
 * CentOS 7
