@@ -26,7 +26,12 @@ CentOS 7+:
 #### Gnome Extensions
 * [dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
-Configure dash-to-dock location to bottom by clicking gear by extension in gnome tweak tool.
+Configure dash-to-dock location to bottom after installing by clicking gear by extension in gnome tweak tool.
+
+Run the following command:
+```
+gsettings set org.gnome.shell.extensions.user-theme name "Arc-OSX-Remix"
+```
 
 Restart and enjoy! 
 
