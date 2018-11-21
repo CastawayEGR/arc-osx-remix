@@ -1,7 +1,7 @@
 # Gnome OSX Theme
 OSX like theme remix for gnome GTK3+ based on Apple-Arc-OSX.
 
-![picture alt](https://image.ibb.co/mXWeh0/Screenshot-from-2018-11-18-23-29-59.png)
+![picture alt](https://image.ibb.co/hyc1hA/screenshot.png)
 
 ### Tested on:
 * CentOS 7
@@ -20,19 +20,9 @@ CentOS 7+:
 ```
 ### Requirements:
 #### Gnome Extensions
-* [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 * [dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
-#### Gnome Tweak Tool Settings:
-
-###### Appearance
-![picture_alt](https://image.ibb.co/n2HK0L/appearance.png)
-###### Extensions
-![picture_alt](https://image.ibb.co/bUo3S0/extensions.png)
-###### Fonts
-![picture_alt](https://image.ibb.co/mja6fL/fonts.png)
-###### Window Titlebars
-![picture_alt](https://image.ibb.co/jJwCLL/window-titlebars.png)
+Configure dash-to-dock location to bottom by clicking gear by extension in gnome tweak tool.
 
 Restart and enjoy! 
 
