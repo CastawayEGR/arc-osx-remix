@@ -1,0 +1,26 @@
+[org/gnome/shell]
+app-picker-view=uint32 1
+command-history=['r']
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com']
+disable-user-extensions=false
+
+[org/gnome/desktop/interface]
+font-name='San Francisco Display 11'
+document-font-name='San Francisco Display 11'
+show-battery-percentage=false
+gtk-im-module='gtk-im-context-simple'
+cursor-theme='OSX-ElCap'
+icon-theme='macOS'
+monospace-font-name='Monospace 11'
+gtk-theme='Arc-OSX-Remix'
+clock-show-date=true
+
+[org/gnome/desktop/screensaver]
+picture-uri='file:///usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.png'
+
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/macOS/macOS_mojave_wallpaper_mid-day.jpg'
+color-shading-type='solid'
+primary-color='#000000'
+picture-options='zoom'
+secondary-color='#000000'
