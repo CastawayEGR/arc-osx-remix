@@ -1,6 +1,6 @@
 Name:    Arc-OSX-Remix
 Version: 0
-Release: 1 
+Release: 2 
 Summary: OSX like Theme for Gnome GTK3
 
 Source0: macOS_mojave_wallpaper_mid-day.png
@@ -60,6 +60,7 @@ cp /usr/share/gnome-shell/wallpaper/macOS_mojave_wallpaper_mid-day.png /usr/shar
 cp /usr/share/themes/Arc-OSX-Remix/org.gnome.shell.gschema.override /usr/share/glib-2.0/schemas/org.gnome.shell.gschema.override 
 
 users=`ls /home/ | grep -v lost`
+release=`cat /etc/os-release | grep NAME | head -n 1 | cut -f 2 -d =`
 
 for i in "$users"; do
   sudo -u $i mkdir -p /home/$i/.local/share/gnome-shell/extensions
@@ -72,17 +73,26 @@ for i in "$users"; do
   sudo -u $i gsettings set org.gnome.desktop.interface document-font-name "San Francisco Display 11"
   sudo -u $i gsettings set org.gnome.desktop.wm.preferences titlebar-font "San Francisco Display Bold 11"
   sudo -u $i gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com 2> /dev/null
-  sudo -u $i gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+
+  if [[ $release == *CentOS* ]]; then 
+        sudo -u $i gsettings set org.gnome.shell.extensions.classic-overrides button-layout "close,minimize,maximize:appemenu"
+  else
+        sudo -u $i gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+  fi
 done
 
-release=`cat /etc/os-release | grep NAME | head -n 1 | cut -f 2 -d =`
-
 if [[ $release == *CentOS* ]]; then
-  mv /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic-active.svg.centos /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic-active.svg
-  mv /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic.svg.centos /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic.svg
-  mv /usr/share/icons/hicolor/scalable/apps/start-here.svg /usr/share/icons/hicolor/scalable/apps/start-here.svg.bak
-  mv /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/  /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com.bak/
-  mv /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/  /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com.bak/
+  cp /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic-active.svg.centos /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic-active.svg
+  cp /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic.svg.centos /usr/share/themes/Arc-OSX-Remix/gnome-shell/assets/view-grid-symbolic.svg
+  if [[ -f /usr/share/icons/hicolor/scalable/apps/start-here.svg ]]; then
+      mv /usr/share/icons/hicolor/scalable/apps/start-here.svg /usr/share/icons/hicolor/scalable/apps/start-here.svg.bak
+  fi
+  if [[ -d /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/ ]]; then
+      mv /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/  /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com.bak/
+  fi
+  if [[ -d /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/ ]]; then
+      mv /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/  /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com.bak/
+  fi
 fi
 
 glib-compile-schemas /usr/share/glib-2.0/schemas/ 2> /dev/null
@@ -102,5 +112,8 @@ killall -HUP gnome-shell
 set-gdm-wallpaper --uninstall
 
 %changelog
+* Wed Nov 21 2018 Michael Tipton <mike@ibeta.org> 0-2
+- Added file/dir check logic 
+- Set button-layout for CentOS 
 * Tue Nov 20 2018 Michael Tipton <mike@ibeta.org> 0-1
 - Initial Packaging
