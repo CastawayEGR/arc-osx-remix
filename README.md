@@ -11,15 +11,19 @@ Should work with other distros using gnome. May require additional tweaks (CentO
 
 # Install
 Make sure you save ALL important data before installing.
-During RPM install gnome-shell will reload and you will have to login again. 
 
 Fedora 28+:
 ```shell
 # sudo dnf install Arc-OSX-Remix-0-1.noarch.rpm
+# gsettings set org.gnome.shell.extensions.user-theme name "Arc-OSX-Remix"
 ```
+Fedora 28 requires manual setting of theme in gnome tweak tools.
+
 CentOS 7+:
 ```shell
+# sudo curl -o /etc/yum.repos.d/konimex-neofetch-epel-7.repo https://copr.fedorainfracloud.org/coprs/konimex/neofetch/repo/epel-7/konimex-neofetch-epel-7.repo
 # sudo yum install Arc-OSX-Remix-0-1.noarch.rpm
+# gsettings set org.gnome.shell.extensions.user-theme name "Arc-OSX-Remix"
 ```
 
 ### Requirements:
@@ -27,11 +31,6 @@ CentOS 7+:
 * [dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
 Configure dash-to-dock location to bottom after installing by clicking gear by extension in gnome tweak tool.
-
-Run the following command:
-```
-gsettings set org.gnome.shell.extensions.user-theme name "Arc-OSX-Remix"
-```
 
 Restart and enjoy! 
 
