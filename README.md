@@ -10,6 +10,9 @@ OSX like theme remix for gnome GTK3+ based on Apple-Arc-OSX.
 Should work with other distros using gnome. May require additional tweaks (CentOS).
 
 # Install
+Make sure you save ALL important data before installing.
+During RPM install gnome-shell will reload and you will have to login again. 
+
 Fedora 28+:
 ```shell
 # sudo dnf install Arc-OSX-Remix-0-1.noarch.rpm
@@ -18,7 +21,6 @@ CentOS 7+:
 ```shell
 # sudo yum install Arc-OSX-Remix-0-1.noarch.rpm
 ```
-During RPM install gnome-shell will reload and you will have to login again. Make sure you save all important data before installing.
 
 ### Requirements:
 #### Gnome Extensions
