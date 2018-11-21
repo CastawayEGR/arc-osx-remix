@@ -10,7 +10,7 @@ Source3: icons
 Source4: themes
 
 License: MIT
-URL: https://github.com/CastawayEGR
+URL: https://github.com/CastawayEGR/arc-osx-remix
 
 Requires(post): info
 Requires(preun): info

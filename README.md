@@ -8,7 +8,7 @@ OSX like theme remix for gnome GTK3+ based on Apple-Arc-OSX.
 * CentOS 7
 * Fedora 28 & 29
 
-Should work with other distros using gnome. May require additional tweaks (CentOS).
+Should work with other distros using gnome. Note the OS may require additional tweaks.
 
 # Install
 Make sure you save ALL important data before installing.
@@ -18,7 +18,7 @@ Fedora 28+:
 # sudo dnf install Arc-OSX-Remix-0-1.noarch.rpm
 # gsettings set org.gnome.shell.extensions.user-theme name "Arc-OSX-Remix"
 ```
-Fedora 28 requires manual setting of theme in gnome tweak tools.
+Fedora 28 requires manual setting of theme in gnome tweak tools for some reason.
 
 CentOS 7+:
 ```shell
@@ -26,6 +26,8 @@ CentOS 7+:
 # sudo yum install Arc-OSX-Remix-0-1.noarch.rpm
 # gsettings set org.gnome.shell.extensions.user-theme name "Arc-OSX-Remix"
 ```
+
+You may need to enable the user-theme extension mnaually in gnome tweaks tool and restart the application to apply theme to shell.
 
 ### Requirements:
 #### Gnome Extensions
